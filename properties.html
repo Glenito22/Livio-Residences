@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Properties | Livio Residences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet must load BEFORE script.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fas fa-home"></i>
+            <span>Livio Residences</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <button class="dropdown-toggle" aria-expanded="false">
+                    Properties
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="buy.html">Buy</a></li>
+                    <li><a href="rent.html">Rent</a></li>
+                    <li><a href="sell.html">Sell</a></li>
+                    <li><a href="commercial.html">Commercial</a></li>
+                </ul>
+            </li>
+            <li><a href="advertise.html">Advertise</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="start-btn">Get Started</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <form class="filter-bar" id="filter-form">
+        <input type="search" id="location" placeholder="Search a place, e.g. Kilimani">
+        <select id="f-listing">
+            <option value="">Buy or rent</option>
+            <option value="rent">For rent</option>
+            <option value="buy">For sale</option>
+        </select>
+        <input type="number" id="f-max" placeholder="Max price (KES)" min="0">
+        <select id="f-beds">
+            <option value="0">No. of bedrooms</option>
+            <option value="2">Air BnB</option>
+            <option value="2">single room</option>
+            <option value="2">Bedsitter</option>
+            <option value="1">1 bedroom</option>
+            <option value="2">2 bedrooms</option>
+            <option value="3">3 bedrooms</option>
+            <option value="4">4 bedrooms</option>
+            <option value="5">5 bedrooms</option>
+        </select>
+        <select id="f-type">
+            <option value="">Property type</option>
+            <option value="Apartment">Apartment</option>
+            <option value="House">House</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Land">Land</option>
+        </select>
+        <button type="reset" class="reset-btn">Reset</button>
+    </form>
+
+    <main class="split">
+        <div id="map"></div>
+
+        <section class="listings">
+            <h1 id="results-title">All properties</h1>
+            <div class="listings-top">
+                <p id="results-count"></p>
+                <select id="sort">
+                    <option value="">Sort: Newest</option>
+                    <option value="low">Price: Low to high</option>
+                    <option value="high">Price: High to low</option>
+                </select>
+            </div>
+            <div id="results-list" class="cards"></div>
+        </section>
+    </main>
+
+</body>
+
+</html>
